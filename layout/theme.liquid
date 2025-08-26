@@ -33,6 +33,13 @@
     {% endif %}
 
     {{ content_for_header }}
+
+    <link
+      rel="stylesheet"
+      href="{{ 'fgs_slider.min.css' | asset_url }}"
+    >
+
+    <script src="{{ 'fgs_sliders.min.js' | asset_url }}" defer></script>
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
