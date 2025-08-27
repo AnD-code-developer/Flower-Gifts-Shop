@@ -6,9 +6,7 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
+        {% content_for 'blocks' %}
         ...
       </div>
       <!-- If we need pagination -->
@@ -22,6 +20,7 @@
       <div class="swiper-scrollbar"></div>
     </div>
   </div>
+  
 </section>
 
 <script>
@@ -52,6 +51,14 @@
 {% schema %}
 {
   "name": "FGS Slider",
+  "blocks": [
+    {
+      "type": "_fgs-slider-item"     
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
     {
       "type": "text",
@@ -60,29 +67,7 @@
       "default": "Featured Slider"
     }
   ],
-  "blocks": [
-    {
-      "type": "slide",
-      "name": "Slide",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Slide Image"
-        },
-        {
-          "type": "text",
-          "id": "alt_text",
-          "label": "Image Alt Text"
-        },
-        {
-          "type": "text",
-          "id": "caption",
-          "label": "Caption"
-        }
-      ]
-    }
-  ],
+
   "max_blocks": 10,
   "presets": [
     {

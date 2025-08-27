@@ -1,0 +1,26 @@
+
+<div class="swiper-slide">{{ block.settings.title }}</div>
+{% schema %}
+{
+  "name": "Slider Item",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Slider Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Slider description goes here."
+    }
+  ]
+}
+{% endschema %}
