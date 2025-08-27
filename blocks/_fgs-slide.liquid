@@ -1,8 +1,16 @@
+{% capture children %}
+    {% content_for 'blocks' %}
+{% endcapture %}
 
-<div class="swiper-slide">{{ block.settings.title }}</div>
+{% render 'fgs-slide', children: children, attributes: block.shopify_attributes %}
 {% schema %}
 {
-  "name": "Slider Item",
+  "name": "FGS Slide",
+  "blocks": [
+    {
+      "type": "@theme"
+    }
+  ],
   "settings": [
     {
       "type": "text",
@@ -21,6 +29,7 @@
       "label": "Description",
       "default": "Slider description goes here."
     }
-  ]
+  ],
+  "presets": [{ "name": "FGS Slide" }]
 }
 {% endschema %}
